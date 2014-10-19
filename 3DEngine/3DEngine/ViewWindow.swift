@@ -17,6 +17,10 @@ class ViewWindow {
     private var angle_ : Float = 0
     private var distanceToCamera : Float = 0
     
+    init() {
+        
+    }
+    
     /**
         Creates a new ViewWindow with the specified bounds on the
         screen and horizontal view angle.

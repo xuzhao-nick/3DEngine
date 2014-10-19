@@ -15,7 +15,7 @@ import Foundation
 class Polygon3D {
     
     var v = [Vector3D]()
-    
+    var numVertices:Int = 0
     /**
         Creates a new Polygon3D with the specified vertices.
     */
@@ -25,6 +25,11 @@ class Polygon3D {
         v.append(v0)
         v.append(v1)
         v.append(v2)
+        numVertices = 3
+    }
+    
+    init() {
+        
     }
     
     /**
@@ -39,6 +44,7 @@ class Polygon3D {
         v.append(v1)
         v.append(v2)
         v.append(v3)
+        numVertices = 4
     }
     
     /**
@@ -48,17 +54,10 @@ class Polygon3D {
     init(vertices:[Vector3D]) {
         
         self.v = vertices;
+        numVertices = self.v.count
         
     }
-    
-    /**
-        Gets the number of vertices this polygon has.
-    */
-    var numVertices: Int {
-        get {
-            return v.count
-        }
-    }
+
     
     /**
         Sets this polygon to the same vertices as the specified
@@ -66,7 +65,7 @@ class Polygon3D {
     */
     func setTo(polygon:Polygon3D) {
         
-        ensureCapacity(numVertices);
+        ensureCapacity(polygon.numVertices);
         
         for i in 0...(numVertices - 1) {
             v[i].setTo(polygon.v[i]);
@@ -79,22 +78,15 @@ class Polygon3D {
     */
     func ensureCapacity(length:Int) {
         
-        if v.count > length {
-            
-            for i in 1...(length - v.count) {
-                v.removeLast()
-            }
-            return
-        }
-        
         
         if v.count < length {
             
-            for i in 1...(length - v.count) {
+            for i in 1...(length - numVertices) {
                 v.append(Vector3D(x: 0, y: 0, z: 0))
             }
             
         }
+        numVertices = length
     }
     
     /**
@@ -122,7 +114,7 @@ class Polygon3D {
     */
     func add(xform:Transform3D) {
         
-        for i in 0...(v.count - 1){
+        for i in 0...(numVertices - 1){
             v[i].add(xform)
         }
 
@@ -135,7 +127,7 @@ class Polygon3D {
     */
     func subtract(xform:Transform3D) {
         
-        for i in 0...(v.count - 1){
+        for i in 0...(numVertices - 1){
             v[i].subtract(xform)
         }
     }
