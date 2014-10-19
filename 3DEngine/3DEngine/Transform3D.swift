@@ -14,7 +14,7 @@ import Foundation
 
 class Transform3D {
     
-    private var location_:Vector3D = Vector3D(x: 0, y: 0, z: 0)
+    var location:Vector3D = Vector3D(x: 0, y: 0, z: 0)
     private var cosAngleX_:Float = 0
     private var sinAngleX_:Float = 0
     private var cosAngleY_:Float = 0
@@ -28,7 +28,7 @@ class Transform3D {
     */
     init (x:Float, y:Float, z:Float) {
         
-        self.location_ = Vector3D(x: x, y: y, z: z)
+        self.location = Vector3D(x: x, y: y, z: z)
         self.setAngle(0,angleY: 0,angleZ: 0);
     }
     
@@ -37,7 +37,9 @@ class Transform3D {
     */
     init(v:Transform3D) {
         
-        location_ = Vector3D(x: 0, y: 0, z: 0);
+        location.x = v.location.x
+        location.y = v.location.y
+        location.z = v.location.z
         setTo(v);
     }
     
@@ -130,12 +132,7 @@ class Transform3D {
         }
     }
     
-    var location:Vector3D {
-        get {
-            return location_
-        }
-    }
-    
+
     var cosAngleX:Float {
         get {
             return cosAngleX_;
@@ -172,7 +169,4 @@ class Transform3D {
     }
     
     
-    
-    
-
 }
