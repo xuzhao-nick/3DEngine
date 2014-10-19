@@ -13,6 +13,7 @@
 		5806640B19F2C4D000C005FB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5806640A19F2C4D000C005FB /* Images.xcassets */; };
 		5806640E19F2C4D000C005FB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5806640C19F2C4D000C005FB /* LaunchScreen.xib */; };
 		5806641A19F2C4D000C005FB /* _DEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5806641919F2C4D000C005FB /* _DEngineTests.swift */; };
+		58A7198E19F3894C00243F0C /* Vector3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A7198D19F3894C00243F0C /* Vector3D.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		5806641319F2C4D000C005FB /* 3DEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 3DEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5806641819F2C4D000C005FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5806641919F2C4D000C005FB /* _DEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _DEngineTests.swift; sourceTree = "<group>"; };
+		58A7198D19F3894C00243F0C /* Vector3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3D.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		5806640019F2C4D000C005FB /* 3DEngine */ = {
 			isa = PBXGroup;
 			children = (
+				58A7198D19F3894C00243F0C /* Vector3D.swift */,
 				5806640319F2C4D000C005FB /* AppDelegate.swift */,
 				5806640519F2C4D000C005FB /* ViewController.swift */,
 				5806640719F2C4D000C005FB /* Main.storyboard */,
@@ -212,6 +215,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58A7198E19F3894C00243F0C /* Vector3D.swift in Sources */,
 				5806640619F2C4D000C005FB /* ViewController.swift in Sources */,
 				5806640419F2C4D000C005FB /* AppDelegate.swift in Sources */,
 			);
@@ -407,6 +411,7 @@
 				5806641F19F2C4D000C005FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		5806642019F2C4D000C005FB /* Build configuration list for PBXNativeTarget "3DEngineTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +420,7 @@
 				5806642219F2C4D000C005FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
