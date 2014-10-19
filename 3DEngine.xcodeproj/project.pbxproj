@@ -14,6 +14,8 @@
 		5806640E19F2C4D000C005FB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5806640C19F2C4D000C005FB /* LaunchScreen.xib */; };
 		5806641A19F2C4D000C005FB /* _DEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5806641919F2C4D000C005FB /* _DEngineTests.swift */; };
 		58A7198E19F3894C00243F0C /* Vector3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A7198D19F3894C00243F0C /* Vector3D.swift */; };
+		58A7199019F395B700243F0C /* ViewWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A7198F19F395B700243F0C /* ViewWindow.swift */; };
+		58A7199219F39B7D00243F0C /* Rect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A7199119F39B7D00243F0C /* Rect.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +40,8 @@
 		5806641819F2C4D000C005FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5806641919F2C4D000C005FB /* _DEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _DEngineTests.swift; sourceTree = "<group>"; };
 		58A7198D19F3894C00243F0C /* Vector3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3D.swift; sourceTree = "<group>"; };
+		58A7198F19F395B700243F0C /* ViewWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewWindow.swift; sourceTree = "<group>"; };
+		58A7199119F39B7D00243F0C /* Rect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rect.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 		5806640019F2C4D000C005FB /* 3DEngine */ = {
 			isa = PBXGroup;
 			children = (
+				58A7199119F39B7D00243F0C /* Rect.swift */,
+				58A7198F19F395B700243F0C /* ViewWindow.swift */,
 				58A7198D19F3894C00243F0C /* Vector3D.swift */,
 				5806640319F2C4D000C005FB /* AppDelegate.swift */,
 				5806640519F2C4D000C005FB /* ViewController.swift */,
@@ -217,6 +223,8 @@
 			files = (
 				58A7198E19F3894C00243F0C /* Vector3D.swift in Sources */,
 				5806640619F2C4D000C005FB /* ViewController.swift in Sources */,
+				58A7199019F395B700243F0C /* ViewWindow.swift in Sources */,
+				58A7199219F39B7D00243F0C /* Rect.swift in Sources */,
 				5806640419F2C4D000C005FB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
