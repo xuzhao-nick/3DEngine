@@ -13,11 +13,11 @@
 		5806640B19F2C4D000C005FB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5806640A19F2C4D000C005FB /* Images.xcassets */; };
 		5806640E19F2C4D000C005FB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5806640C19F2C4D000C005FB /* LaunchScreen.xib */; };
 		5806641A19F2C4D000C005FB /* _DEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5806641919F2C4D000C005FB /* _DEngineTests.swift */; };
-		58A7198E19F3894C00243F0C /* Vector3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A7198D19F3894C00243F0C /* Vector3D.swift */; };
-		58A7199019F395B700243F0C /* ViewWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A7198F19F395B700243F0C /* ViewWindow.swift */; };
-		58A7199219F39B7D00243F0C /* Rect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A7199119F39B7D00243F0C /* Rect.swift */; };
-		58A7199419F3A2DB00243F0C /* Polygon3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A7199319F3A2DB00243F0C /* Polygon3D.swift */; };
-		58A7199619F3ABED00243F0C /* Transform3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58A7199519F3ABED00243F0C /* Transform3D.swift */; };
+		58C6F57319F3D5ED006A3CFE /* Polygon3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6F56E19F3D5ED006A3CFE /* Polygon3D.swift */; };
+		58C6F57419F3D5ED006A3CFE /* Rect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6F56F19F3D5ED006A3CFE /* Rect.swift */; };
+		58C6F57519F3D5ED006A3CFE /* Transform3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6F57019F3D5ED006A3CFE /* Transform3D.swift */; };
+		58C6F57619F3D5ED006A3CFE /* Vector3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6F57119F3D5ED006A3CFE /* Vector3D.swift */; };
+		58C6F57719F3D5ED006A3CFE /* ViewWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C6F57219F3D5ED006A3CFE /* ViewWindow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,11 +41,11 @@
 		5806641319F2C4D000C005FB /* 3DEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 3DEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5806641819F2C4D000C005FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5806641919F2C4D000C005FB /* _DEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _DEngineTests.swift; sourceTree = "<group>"; };
-		58A7198D19F3894C00243F0C /* Vector3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3D.swift; sourceTree = "<group>"; };
-		58A7198F19F395B700243F0C /* ViewWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewWindow.swift; sourceTree = "<group>"; };
-		58A7199119F39B7D00243F0C /* Rect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rect.swift; sourceTree = "<group>"; };
-		58A7199319F3A2DB00243F0C /* Polygon3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Polygon3D.swift; sourceTree = "<group>"; };
-		58A7199519F3ABED00243F0C /* Transform3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transform3D.swift; sourceTree = "<group>"; };
+		58C6F56E19F3D5ED006A3CFE /* Polygon3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Polygon3D.swift; sourceTree = "<group>"; };
+		58C6F56F19F3D5ED006A3CFE /* Rect.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Rect.swift; sourceTree = "<group>"; };
+		58C6F57019F3D5ED006A3CFE /* Transform3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Transform3D.swift; sourceTree = "<group>"; };
+		58C6F57119F3D5ED006A3CFE /* Vector3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Vector3D.swift; sourceTree = "<group>"; };
+		58C6F57219F3D5ED006A3CFE /* ViewWindow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewWindow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,11 +87,7 @@
 		5806640019F2C4D000C005FB /* 3DEngine */ = {
 			isa = PBXGroup;
 			children = (
-				58A7199519F3ABED00243F0C /* Transform3D.swift */,
-				58A7199319F3A2DB00243F0C /* Polygon3D.swift */,
-				58A7199119F39B7D00243F0C /* Rect.swift */,
-				58A7198F19F395B700243F0C /* ViewWindow.swift */,
-				58A7198D19F3894C00243F0C /* Vector3D.swift */,
+				58C6F56D19F3D5B6006A3CFE /* 3DEngine */,
 				5806640319F2C4D000C005FB /* AppDelegate.swift */,
 				5806640519F2C4D000C005FB /* ViewController.swift */,
 				5806640719F2C4D000C005FB /* Main.storyboard */,
@@ -125,6 +121,18 @@
 				5806641819F2C4D000C005FB /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		58C6F56D19F3D5B6006A3CFE /* 3DEngine */ = {
+			isa = PBXGroup;
+			children = (
+				58C6F56E19F3D5ED006A3CFE /* Polygon3D.swift */,
+				58C6F56F19F3D5ED006A3CFE /* Rect.swift */,
+				58C6F57019F3D5ED006A3CFE /* Transform3D.swift */,
+				58C6F57119F3D5ED006A3CFE /* Vector3D.swift */,
+				58C6F57219F3D5ED006A3CFE /* ViewWindow.swift */,
+			);
+			path = 3DEngine;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,13 +235,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58A7198E19F3894C00243F0C /* Vector3D.swift in Sources */,
-				58A7199419F3A2DB00243F0C /* Polygon3D.swift in Sources */,
 				5806640619F2C4D000C005FB /* ViewController.swift in Sources */,
-				58A7199619F3ABED00243F0C /* Transform3D.swift in Sources */,
-				58A7199019F395B700243F0C /* ViewWindow.swift in Sources */,
-				58A7199219F39B7D00243F0C /* Rect.swift in Sources */,
+				58C6F57719F3D5ED006A3CFE /* ViewWindow.swift in Sources */,
+				58C6F57519F3D5ED006A3CFE /* Transform3D.swift in Sources */,
+				58C6F57319F3D5ED006A3CFE /* Polygon3D.swift in Sources */,
+				58C6F57619F3D5ED006A3CFE /* Vector3D.swift in Sources */,
 				5806640419F2C4D000C005FB /* AppDelegate.swift in Sources */,
+				58C6F57419F3D5ED006A3CFE /* Rect.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
