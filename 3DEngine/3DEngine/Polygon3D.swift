@@ -8,6 +8,9 @@
 
 import Foundation
 
+
+var temp1 = Vector3D(x: 0, y: 0, z: 0)
+var temp2 = Vector3D(x: 0, y: 0, z: 0)
 /**
     The Polygon3D class represents a polygon as a series of
     vertices.
@@ -146,8 +149,6 @@ class Polygon3D {
     */
     func calcNormal()->Vector3D {
         
-        var temp1 = Vector3D(x: 0, y: 0, z: 0)
-        var temp2 = Vector3D(x: 0, y: 0, z: 0)
         temp1.setTo(v[2]);
         temp1.subtract(v[1]);
         temp2.setTo(v[0]);
@@ -158,8 +159,8 @@ class Polygon3D {
     }
     
     /**
-    Gets the normal of this polygon. Use calcNormal() if
-    any vertices have changed.
+        Gets the normal of this polygon. Use calcNormal() if
+        any vertices have changed.
     */
     var normal:Vector3D {
         get {
@@ -168,6 +169,20 @@ class Polygon3D {
         set {
             normal.setTo(newValue)
         }
+    }
+    
+    /**
+        Tests if this polygon is facing the specified location.
+        This method uses static objects in the Polygon3D class
+        for calculations, so this method is not thread-safe across
+        all instances of Polygon3D.
+    */
+    func isFacing(vector3D:Vector3D)->Bool {
+        
+        temp1.setTo(vector3D);
+        temp1.subtract(v[0]);
+        return (normal.getDotProduct(temp1) >= 0)
+        
     }
     
 
