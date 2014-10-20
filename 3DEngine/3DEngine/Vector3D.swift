@@ -257,6 +257,31 @@ class Vector3D {
         rotateX(xform.cosAngleX, sinAngle: -xform.sinAngleX);
         
     }
+    
+    /**
+        Returns the dot product of this vector and the specified
+        vector.
+    */
+    func getDotProduct(v:Vector3D) ->Float {
+        
+        return x * v.x + y * v.y + z * v.z;
+    }
 
+    /**
+        Sets this vector to the cross product of the two
+        specified vectors. Either of the specified vectors can
+        be this vector.
+    */
+    func setToCrossProduct(u:Vector3D, v:Vector3D) {
+        
+        // assign to local vars first in case u or v is 'this'
+        let x:Float = u.y * v.z - u.z * v.y;
+        let y:Float = u.z * v.x - u.x * v.z;
+        let z:Float = u.x * v.y - u.y * v.x;
+        self.x = x;
+        self.y = y;
+        self.z = z;
+        
+    }
 
 }
