@@ -16,6 +16,8 @@ class Polygon3D {
     
     var v = [Vector3D]()
     var numVertices:Int = 0
+    private var normal_ = Vector3D(x: 0, y: 0, z: 0)
+    
     /**
         Creates a new Polygon3D with the specified vertices.
     */
@@ -131,6 +133,44 @@ class Polygon3D {
             v[i].subtract(xform)
         }
     }
+    
+    /**
+        Calculates the unit-vector normal of this polygon.
+        This method uses the first, second, and third vertices
+        to calculate the normal, so if these vertices are
+        collinear, this method will not work.
+        Use setNormal() to explicitly set the normal.
+        This method uses static objects in the Polygon3D class
+        for calculations, so this method is not thread-safe across
+        all instances of Polygon3D.
+    */
+    func calcNormal()->Vector3D {
+        
+        var temp1 = Vector3D(x: 0, y: 0, z: 0)
+        var temp2 = Vector3D(x: 0, y: 0, z: 0)
+        temp1.setTo(v[2]);
+        temp1.subtract(v[1]);
+        temp2.setTo(v[0]);
+        temp2.subtract(v[1]);
+        normal_.setToCrossProduct(temp1, v: temp2);
+        normal_.normalize();
+        return normal_;
+    }
+    
+    /**
+    Gets the normal of this polygon. Use calcNormal() if
+    any vertices have changed.
+    */
+    var normal:Vector3D {
+        get {
+            return normal_;
+        }
+        set {
+            normal.setTo(newValue)
+        }
+    }
+    
+
 
     
 }
