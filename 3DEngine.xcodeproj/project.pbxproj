@@ -13,6 +13,8 @@
 		5806640B19F2C4D000C005FB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5806640A19F2C4D000C005FB /* Images.xcassets */; };
 		5806640E19F2C4D000C005FB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5806640C19F2C4D000C005FB /* LaunchScreen.xib */; };
 		5806641A19F2C4D000C005FB /* _DEngineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5806641919F2C4D000C005FB /* _DEngineTests.swift */; };
+		5861ED1019F5543F00091EB3 /* Scan.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5861ED0F19F5543F00091EB3 /* Scan.swift */; };
+		5861ED1219F556F400091EB3 /* ScanConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5861ED1119F556F400091EB3 /* ScanConverter.swift */; };
 		58794DC719F3F3C300FD455A /* DrawView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58794DC619F3F3C300FD455A /* DrawView.swift */; };
 		58794DC919F3F62C00FD455A /* SolidPolygon3D.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58794DC819F3F62C00FD455A /* SolidPolygon3D.swift */; };
 		58794DCB19F404FD00FD455A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58794DCA19F404FD00FD455A /* QuartzCore.framework */; };
@@ -44,6 +46,8 @@
 		5806641319F2C4D000C005FB /* 3DEngineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 3DEngineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5806641819F2C4D000C005FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5806641919F2C4D000C005FB /* _DEngineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _DEngineTests.swift; sourceTree = "<group>"; };
+		5861ED0F19F5543F00091EB3 /* Scan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scan.swift; sourceTree = "<group>"; };
+		5861ED1119F556F400091EB3 /* ScanConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanConverter.swift; sourceTree = "<group>"; };
 		58794DC619F3F3C300FD455A /* DrawView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DrawView.swift; sourceTree = "<group>"; };
 		58794DC819F3F62C00FD455A /* SolidPolygon3D.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SolidPolygon3D.swift; sourceTree = "<group>"; };
 		58794DCA19F404FD00FD455A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -141,6 +145,8 @@
 				58C6F57019F3D5ED006A3CFE /* Transform3D.swift */,
 				58C6F57119F3D5ED006A3CFE /* Vector3D.swift */,
 				58C6F57219F3D5ED006A3CFE /* ViewWindow.swift */,
+				5861ED0F19F5543F00091EB3 /* Scan.swift */,
+				5861ED1119F556F400091EB3 /* ScanConverter.swift */,
 			);
 			path = 3DEngine;
 			sourceTree = "<group>";
@@ -246,11 +252,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				5806640619F2C4D000C005FB /* ViewController.swift in Sources */,
+				5861ED1219F556F400091EB3 /* ScanConverter.swift in Sources */,
 				58C6F57719F3D5ED006A3CFE /* ViewWindow.swift in Sources */,
 				58794DC919F3F62C00FD455A /* SolidPolygon3D.swift in Sources */,
 				58794DC719F3F3C300FD455A /* DrawView.swift in Sources */,
 				58C6F57519F3D5ED006A3CFE /* Transform3D.swift in Sources */,
 				58C6F57319F3D5ED006A3CFE /* Polygon3D.swift in Sources */,
+				5861ED1019F5543F00091EB3 /* Scan.swift in Sources */,
 				58C6F57619F3D5ED006A3CFE /* Vector3D.swift in Sources */,
 				5806640419F2C4D000C005FB /* AppDelegate.swift in Sources */,
 				58C6F57419F3D5ED006A3CFE /* Rect.swift in Sources */,
