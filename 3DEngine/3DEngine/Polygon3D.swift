@@ -185,6 +185,86 @@ class Polygon3D {
         
     }
     
+    /**
+        Clips this polygon so that all vertices are in front of
+        the clip plane, clipZ (in other words, all vertices
+        have z <= clipZ).
+        The value of clipZ should not be 0, as this causes
+        divide-by-zero problems.
+        Returns true if the polygon is at least partially in
+        front of the clip plane.
+    */
+    func clip(clipZ:Float)->Bool {
+        ensureCapacity(numVertices * 3)
+    
+        var isCompletelyHidden = true
+    
+        // insert vertices so all edges are either completely
+        // in front of or behind the clip plane
+        for (var i = 0; i < numVertices; i++) {
+            var next:Int = (i + 1) % numVertices
+            var v1:Vector3D = v[i]
+            var v2:Vector3D = v[next]
+            if (v1.z < clipZ) {
+                isCompletelyHidden = false
+            }
+            // ensure v1.z < v2.z
+            if (v1.z > v2.z) {
+                var temp:Vector3D = v1
+                v1 = v2
+                v2 = temp
+            }
+            if (v1.z < clipZ && v2.z > clipZ) {
+                var scale:Float = (clipZ-v1.z) / (v2.z - v1.z)
+                insertVertex(next,x: v1.x + scale * (v2.x - v1.x) ,y: v1.y + scale * (v2.y - v1.y),z: clipZ)
+                // skip the vertex we just created
+                i++
+            }
+        }
+    
+        if (isCompletelyHidden) {
+            return false;
+        }
+    
+        // delete all vertices that have z > clipZ
+        for (var i = numVertices - 1; i>=0; i--) {
+            if (v[i].z > clipZ) {
+                deleteVertex(i)
+            }
+        }
+    
+        return (numVertices >= 3)
+    }
+    
+    
+    /**
+        Inserts a new vertex at the specified index.
+    */
+    func insertVertex(index:Int, x:Float, y:Float,z:Float)
+    {
+        var newVertex:Vector3D = v[v.count - 1]
+        newVertex.x = x
+        newVertex.y = y
+        newVertex.z = z
+        for (var i = v.count - 1; i > index; i--) {
+            v[i] = v[i-1];
+        }
+        v[index] = newVertex;
+        numVertices++;
+    }
+    
+    
+    /**
+        Delete the vertex at the specified index.
+    */
+    func deleteVertex(index:Int) {
+        var deleted:Vector3D = v[index]
+        for (var i = index; i < v.count - 1; i++) {
+            v[i] = v[i+1]
+        }
+        v[v.count - 1] = deleted;
+        numVertices--;
+    }
 
 
     
