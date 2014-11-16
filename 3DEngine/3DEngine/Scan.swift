@@ -9,17 +9,6 @@
 import Foundation
 
 
-func ceil(f:Float)->Int {
-    
-    if  f > 0 {
-        return Int(f) + 1
-    }
-    else {
-        return Int(f)
-    }
-}
-
-
 /**
     A horizontal scan line.
 */
