@@ -125,15 +125,15 @@ class ScanConverter {
                 continue;
             }
     
-            var startY:Int = max(ceil(v1.y), minY)
-            var endY:Int = min(ceil(v2.y)-1, maxY)
+            var startY:Int = max(MoreMath.ceil(v1.y), minY)
+            var endY:Int = min(MoreMath.ceil(v2.y) - 1, maxY)
             top = min(top, startY)
             bottom = max(bottom, endY)
             var dx:Float = v2.x - v1.x
     
             // special case: vertical line
             if (dx == 0) {
-                var x:Int = ceil(v1.x)
+                var x:Int = MoreMath.ceil(v1.x)
                 // ensure x within view bounds
                 x = min(maxX+1, max(x, minX))
                 for (var y = startY; y <= endY; y++) {
@@ -180,14 +180,14 @@ class ScanConverter {
                 // trim back of line
                 var endX:Float = v1.x + (Float(endY) - v1.y) * gradient
                 if (endX < Float(minX)) {
-                    var yInt:Int = ceil(v1.y + (Float(minX) - v1.x) / gradient)
+                    var yInt:Int = MoreMath.ceil(v1.y + (Float(minX) - v1.x) / gradient)
                     yInt = max(yInt, startY)
                     while (endY >= yInt) {
                         scans[endY].setBoundary(minX)
                         endY--
                     }
                 } else if (endX > Float(maxX)) {
-                    var yInt:Int = ceil(v1.y + (Float(maxX) - v1.x) / gradient)
+                    var yInt:Int = MoreMath.ceil(v1.y + (Float(maxX) - v1.x) / gradient)
                     yInt = max(yInt, startY)
                     while (endY >= yInt) {
                         scans[endY].setBoundary(maxX+1)
