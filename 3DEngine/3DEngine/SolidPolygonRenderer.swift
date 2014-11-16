@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreGraphics
 /**
     The SolidPolygonRenderer class transforms and draws
     solid-colored polygons onto the screen.
@@ -34,22 +35,28 @@ class SolidPolygonRenderer :PolygonRenderer {
     */
     override func drawCurrentPolygon(context:CGContextRef) {
         
+        // set line width
+        CGContextSetLineWidth(context, 1.0)
         // set the color
-        if (sourcePolygon instanceof SolidPolygon3D) {
-            g.setColor(((SolidPolygon3D)sourcePolygon).getColor());
+        if (sourcePolygon is SolidPolygon3D) {
+            let solidPolygon:SolidPolygon3D =  self.sourcePolygon as SolidPolygon3D
+            CGContextSetStrokeColorWithColor(context, solidPolygon.color.CGColor )
+
         }
         else {
-            g.setColor(Color.GREEN);
+           CGContextSetStrokeColorWithColor(context, UIColor.lightGrayColor().CGColor )
         }
         
         // draw the scans
-        int y = scanConverter.getTopBoundary();
-        while (y<=scanConverter.getBottomBoundary()) {
-            ScanConverter.Scan scan = scanConverter.getScan(y);
+        var y = scanConverter.topBoundary
+        while (y <= scanConverter.bottomBoundary) {
+            let scan:Scan = scanConverter.getScan(y)
             if (scan.isValid()) {
-                g.drawLine(scan.left, y, scan.right, y);
+                CGContextMoveToPoint(context, CGFloat(scan.left),CGFloat(y))
+                CGContextAddLineToPoint(context, CGFloat(scan.right),CGFloat(y))
             }
-            y++;
+            y++
         }
+        CGContextStrokePath(context)
     }
 }
