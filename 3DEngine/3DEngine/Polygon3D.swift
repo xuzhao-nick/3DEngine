@@ -195,7 +195,7 @@ class Polygon3D {
         front of the clip plane.
     */
     func clip(clipZ:Float)->Bool {
-        ensureCapacity(numVertices * 3)
+        //ensureCapacity(numVertices * 3)
     
         var isCompletelyHidden = true
     
@@ -223,11 +223,11 @@ class Polygon3D {
         }
     
         if (isCompletelyHidden) {
-            return false;
+            return false
         }
     
         // delete all vertices that have z > clipZ
-        for (var i = numVertices - 1; i>=0; i--) {
+        for (var i = numVertices - 1; i >= 0; i--) {
             if (v[i].z > clipZ) {
                 deleteVertex(i)
             }
@@ -242,14 +242,8 @@ class Polygon3D {
     */
     func insertVertex(index:Int, x:Float, y:Float,z:Float)
     {
-        var newVertex:Vector3D = v[v.count - 1]
-        newVertex.x = x
-        newVertex.y = y
-        newVertex.z = z
-        for (var i = v.count - 1; i > index; i--) {
-            v[i] = v[i-1];
-        }
-        v[index] = newVertex;
+        var newVertex:Vector3D = Vector3D(x: x, y: y, z: z)
+        v.insert(newVertex, atIndex: index)
         numVertices++;
     }
     
@@ -258,11 +252,7 @@ class Polygon3D {
         Delete the vertex at the specified index.
     */
     func deleteVertex(index:Int) {
-        var deleted:Vector3D = v[index]
-        for (var i = index; i < v.count - 1; i++) {
-            v[i] = v[i+1]
-        }
-        v[v.count - 1] = deleted;
+        v.removeAtIndex(index)
         numVertices--;
     }
 
